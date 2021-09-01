@@ -1,0 +1,129 @@
+.popup {
+  background-color: #fff;
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  &__header {
+    margin-bottom: 24px;
+    position: relative;
+    &__title {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 24px;
+    }
+    &-text {
+      font-size: 12px;
+      line-height: 16px;
+      color: #808080;
+      margin: 0;
+    }
+    &-close {
+      position: absolute;
+      right: 20px;
+      top: 0;
+      width: 12px;
+      height: 12px;
+      background-color: transparent;
+      border: none;
+      &:before, &:after {
+        position: absolute;
+        left: 15px;
+        display: block;
+        content: ' ';
+        height: 12px;
+        width: 2px;
+        background: #EA0029;
+      }
+      &:before {
+        transform: rotate(45deg);
+      }
+      &:after {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+  &__input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+    label {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+    }
+    input {
+      padding: 10px 8px;
+      border: 1px solid #DFE3E6;
+      border-radius: 3px;
+      font-size: 14px;
+      line-height: 24px;
+      &::placeholder {
+        font-size: 14px;
+        line-height: 24px;
+        color: #BEC5CC;
+      }
+    }
+  }
+  &__change {
+    &-btn {
+      background-color: #EEF0F2;
+      border-radius: 50px;
+      font-size: 14px;
+      line-height: 24px;
+      padding: 6px 12px;
+      font-weight: 300;
+      margin-right: 5px;
+      &.active {
+        background-color: #FF5E56;
+        color: #fff;
+      }
+    }
+  }
+  &__button {
+    &-salary {
+      font-style: normal;
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 24px;
+      color: #EA0029;
+      margin-bottom: 24px;
+    }
+    &-add {
+      color: #fff;
+      text-align: center;
+      width: 100%;
+      padding: 10px 0;
+      background: linear-gradient(255.35deg, #DC3131 0.83%, rgba(255, 79, 79, 0) 108.93%), #FF5E56;
+      box-shadow: 0px 0px 24px rgba(234, 0, 41, 0.33);
+      border-radius: 6px;
+    }
+  }
+  &__footer {
+    margin-top: 10px;
+
+  }
+
+  @media screen and (max-width:576px) {
+    height: 100%;
+  }
+  @media  screen and (min-width:1024px) {
+    max-width: 552px;
+    border-radius: 30px;
+    &__footer {
+      margin-top: 40px;
+    }
+    &__change {
+      display: flex;
+      align-items: center;
+      &-title {
+        font-size: 14px;
+        line-height: 24px;
+        margin-right: 32px;
+      }
+    }
+    &__header {
+      padding-right: 30%;
+    }
+  }
+}

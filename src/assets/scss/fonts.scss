@@ -1,0 +1,34 @@
+$FontPath: '../fonts' !default;
+
+@font-face {
+  font-family: 'LabGrotesque-Bold';
+  src: url('#{$FontPath}/LabGrotesque-Bold.woff')
+      format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LabGrotesque-Light';
+  src: url('#{$FontPath}/LabGrotesque-Light.woff')
+      format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LabGrotesque-Medium';
+  src: url('#{$FontPath}/LabGrotesque-Medium.woff')
+      format('woff');
+  font-weight:500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'LabGrotesque-Regular';
+  src: url('#{$FontPath}/LabGrotesque-Regular.woff')
+      format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
