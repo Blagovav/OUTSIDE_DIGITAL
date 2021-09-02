@@ -1,6 +1,6 @@
 <template>
   <form class="popup" @submit.prevent>
-    <div class="popup-inner">
+    <div class="popup__inner">
       <div class="popup__header">
         <h2 class="popup__header-title">Налоговый вычет</h2>
         <p class="popup__header-text">Используйте налоговый вычет чтобы погасить ипотеку досрочно.
@@ -9,10 +9,10 @@
       </div>
       <div class="popup__input">
         <label for="salary">Ваша зарплата в месяц</label>
-        <input id="salary" type="number" v-model="number" placeholder="Введите данные">
+        <input id="salary" type="number" v-model="salary" placeholder="Введите данные">
       </div>
-      <button @click="checkNalog(nalog)" type="button" class="popup__button-salary">Расчитать</button>
-      <List :items="numbers" v-if="isShowList"/>
+      <button @click="checkTax(a)" type="button" class="popup__button-salary">Расчитать</button>
+      <List :items="taxNumber" v-if="isShowList"/>
       <div class="popup__change">
         <h3 class="popup__change-title">Что уменьшаем?</h3>
         <button v-for="(item,idx) in buttonsChange"
@@ -37,13 +37,13 @@ export default {
     List
   },
   data: ()=>({
-    number: null,
-    nalogNumber: null,
-    maxNalog: 260000,
+    salary: null,
+    taxNumber: null,
+    maxTax: 260000,
     numbers: [],
     num: null,
     isShowList: false,
-    numZel: null,
+    numWole: null,
     buttonsChange: [{
       text: 'Платеж',
       active: true
@@ -53,8 +53,8 @@ export default {
     }]
   }),
   computed: {
-    nalog() {
-     return this.number * 12 * 0.13
+    paymentTax() {
+     return this.salary * 12 * 0.13
     }
   },
   methods: {
@@ -65,19 +65,19 @@ export default {
         })
       }
     },
-    checkNalog() {
-    this.numZel = Math.floor(this.maxNalog/this.nalog)
-    this.num = this.maxNalog % this.nalog
-    this.checkNalogZel()
+    checkTax() {
+    this.numWole= Math.floor(this.maxTax/this.paymentTax)
+    this.num = this.maxTax % this.paymentTax
+    this.checkQuantity()
     },
-    checkNalogZel() {
+    checkQuantity() {
       this.isShowList = !this.isShowList
       let arr = [];
-      for (let i = 0; i < this.numZel; i++) {
-          arr.push(this.nalog);
+      for (let i = 0; i < this.numWole; i++) {
+          arr.push(this.Tax);
       }
       arr.push(this.num);
-      this.numbers = arr;
+      this.taxNumber = arr;
     }
   }
 }

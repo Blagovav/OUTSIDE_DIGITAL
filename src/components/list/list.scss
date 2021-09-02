@@ -1,4 +1,6 @@
 .list {
+  max-height: 360px;
+  overflow: scroll;
   &__title {
     font-weight: 500;
     font-size: 14px;
